@@ -1,17 +1,3 @@
-# FROM python:3.8
-
-# COPY ./requirements.txt /webapp/requirements.txt
-
-# WORKDIR /webapp
-
-# RUN pip install -r requirements.txt
-
-# COPY webapp/* /webapp
-
-# EXPOSE 8080
-
-# CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
-
 FROM python:3.8
 
 COPY ./requirements.txt /webapp/requirements.txt
@@ -22,6 +8,20 @@ RUN pip install -r requirements.txt
 
 COPY webapp/* /webapp
 
-ENTRYPOINT [ "uvicorn" ]
+EXPOSE 8080
 
-CMD [ "--host", "0.0.0.0", "main:app" ]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
+
+# FROM python:3.8
+
+# COPY ./requirements.txt /webapp/requirements.txt
+
+# WORKDIR /webapp
+
+# RUN pip install -r requirements.txt
+
+# COPY webapp/* /webapp
+
+# ENTRYPOINT [ "uvicorn" ]
+
+# CMD [ "--host", "0.0.0.0", "main:app" ]
