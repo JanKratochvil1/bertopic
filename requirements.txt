@@ -1,0 +1,8 @@
+fastapi==0.78.0
+uvicorn[standard]
+pydantic
+numpy
+pandas
+bertopic
+nltk
+sentence_transformers
